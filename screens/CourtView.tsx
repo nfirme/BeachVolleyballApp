@@ -1,13 +1,11 @@
-import { View } from 'react-native'
-import { CourtGrid } from '../components';
+import { Box } from 'native-base';
 import { screenStyles } from '../styles';
+import HookForm from '../components/Form/HookForm';
 
 export default function CourtView() {
   return (
-    <View style={screenStyles.screen}>
-      <CourtGrid />
-    </View>
+    <Box style={screenStyles.screen}>
+      <HookForm />
+    </Box>
   );
 }
-
-

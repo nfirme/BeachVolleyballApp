@@ -1,21 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, SafeAreaView } from 'react-native';
-import { CourtView } from './screens';
+import { NativeBaseProvider } from 'native-base';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { CourtView, PlayerList } from './screens';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <CourtView />
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <Tab.Navigator initialRouteName="Players">
+          <Tab.Screen name="Players" component={PlayerList} />
+          <Tab.Screen name="Court" component={CourtView} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
