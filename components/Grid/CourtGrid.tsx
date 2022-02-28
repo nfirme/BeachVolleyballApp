@@ -1,27 +1,44 @@
-import { AspectRatio, Box, useMediaQuery, HStack, Flex } from 'native-base';
+import { AspectRatio, Box, useMediaQuery, HStack, Flex, Center, Text} from 'native-base';
 import React from 'react';
 import Cell from './Cell'
 
-type CourtGridProps = {
-  handleClick: any;
-};
-
 type RowProps = {
   flex?: number;
-  rowIndex?: number;
+  data: string[]
 };
 
-const Row = (props: RowProps) => (
-  <HStack {...props}>
-    <Box flex={1} bg="primary.300" borderWidth={2} />
-    <Box flex={1} bg="primary.300" borderWidth={2} />
-    <Box flex={1} bg="primary.300" borderWidth={2}/>
-  </HStack>
-);
+  const Row = (props: RowProps) => (
+    <HStack {...props}>
+      {props.data.map((item, index) => (
+        <Box
+          key={index}
+          flex={1}
+          bg="amber.300"
+          borderWidth={2}
+        >
+          <Text>{item}</Text>
+        </Box>
+      ))}
+    </HStack>
+  );
 
-const Net = () => <Box flex={1} borderWidth={2} bg="primary.100" />;
+  const Net = () => (
+    <Center flex={1} borderWidth={2} bg="primary.100">
+      Nett
+    </Center>
+  );
 
-export default function CourtGrid({ handleClick }: CourtGridProps) {
+  const Court = () => (
+    <Flex>
+      <Row flex={2} data={['1', '2', '3']} />
+      <Row flex={2} data={['4', '5', '6']} />
+      <Row flex={2} data={['7', '8', '9']} />
+      <Net />
+      <Row flex={3} data={['Left', 'Center', 'Right']} />
+    </Flex>
+  );
+
+export default function CourtGrid() {
   const [isLandScape, isPortrait] = useMediaQuery([
     {
       orientation: 'landscape',
@@ -31,25 +48,15 @@ export default function CourtGrid({ handleClick }: CourtGridProps) {
     },
   ]);
 
+
+
   return isLandScape ? (
     <AspectRatio height="100%" ratio={0.8}>
-      <Flex>
-        <Row flex={2} />
-        <Row flex={2} />
-        <Row flex={2} />
-        <Net />
-        <Row flex={3} />
-      </Flex>
+      <Court />
     </AspectRatio>
   ) : (
     <AspectRatio width="100%" ratio={0.8}>
-      <Flex bg="amber.200">
-        <Row flex={2} />
-        <Row flex={2} />
-        <Row flex={2} />
-        <Net />
-        <Row flex={3} />
-      </Flex>
+      <Court />
     </AspectRatio>
   );
 }

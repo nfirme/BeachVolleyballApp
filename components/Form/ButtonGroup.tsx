@@ -1,20 +1,25 @@
 import { Button } from 'native-base';
 
 type ButtonGroupProps = {
-  elements: string[],
-  colorScheme?: string,
-  handleClick: any,
-  value: number
+  value: string;
+  onChange: (value: any) => void;
+  colorScheme?: string;
+  elements: string[];
 };
 
-export default function MyButtonGroup({ value, elements, colorScheme, handleClick }: ButtonGroupProps) {
+export default function ButtonGroup({
+  value,
+  onChange,
+  elements,
+  colorScheme,
+}: ButtonGroupProps) {
   return (
     <Button.Group isAttached colorScheme={colorScheme}>
       {elements.map((element, index) => (
         <Button
-          variant={index === value ? 'solid' : 'outline'}
-          onPress={() => handleClick(index)}
+          variant={value === element ? 'solid' : 'outline'}
           key={index}
+          onPress={() => onChange(element)}
         >
           {element}
         </Button>
