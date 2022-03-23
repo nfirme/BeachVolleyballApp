@@ -1,0 +1,1 @@
+export const FALLBACK_IMG_URL = 'https://img.icons8.com/windows/96/000000/help.png';

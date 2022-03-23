@@ -1,13 +1,9 @@
 import { VStack, Button } from 'native-base';
 import { Controller } from 'react-hook-form';
+import { SidebarButtonsProps } from '../../types';
 import ButtonGroup from './ButtonGroup';
 
-type InputButtonsProps = {
-  control: any;
-  onSubmit: any;
-}
-
-export default function InputButtons({ control, onSubmit }: InputButtonsProps) {
+export default function SidebarButtons({ control, onSubmit }: SidebarButtonsProps) {
   const offenseElements = ['Hit', 'Shot'];
   const defenseElements = ['Block', 'Pull'];
 
