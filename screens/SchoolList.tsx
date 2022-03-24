@@ -10,12 +10,20 @@ export default function SchoolList({ navigation }: any) {
 
   useEffect(() => {
     console.log('Fetch all schools');
+    let sorted = schools.sort((a, b) => {
+      if (a.name > b.name)
+        return 1;
+      if (b.name > a.name)
+        return -1;
+      return 0;
+    })
+    setSchoolList(sorted);
   }, []);
 
   return (
     <Box>
       <FlatList
-        data={schools}
+        data={schoolList}
         renderItem={({ item }) => (
           <PressableRow
             onPress={() =>
