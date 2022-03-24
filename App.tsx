@@ -3,18 +3,19 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CourtView, PlayerList, SchoolList } from './screens';
 import { NavigatorParamList } from './types';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Tab = createBottomTabNavigator<NavigatorParamList>();
+const Stack = createNativeStackNavigator<NavigatorParamList>();
 
 export default function App() {
   return (
     <NativeBaseProvider>
       <NavigationContainer>
-        <Tab.Navigator initialRouteName="Schools">
-          <Tab.Screen name="Schools" component={SchoolList} />
-          <Tab.Screen name="Players" component={PlayerList} />
-          <Tab.Screen name="Court" component={CourtView} />
-        </Tab.Navigator>
+        <Stack.Navigator initialRouteName="Schools">
+          <Stack.Screen name="Schools" component={SchoolList} />
+          <Stack.Screen name="Players" component={PlayerList} />
+          <Stack.Screen name="Court" component={CourtView} />
+        </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
   );
