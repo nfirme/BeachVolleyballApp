@@ -9,34 +9,69 @@ export const sampleTeam = {
   players: [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      name: 'Aafreen Khan',
+      name: 'Rachel Green',
       school: 'CAL POLY SLO',
       avatarUrl:
         'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      name: 'Sujitha Mathur',
+      name: 'Ross Geller',
       school: 'CAL POLY SLO',
       avatarUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyEaZqT3fHeNrPGcnjLLX1v_W4mvBlgpwxnA&usqp=CAU',
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      name: 'Anci Barroco',
+      name: 'Chandler Bing',
       school: 'CAL POLY SLO',
       avatarUrl: 'https://miro.medium.com/max/1400/0*0fClPmIScV5pTLoE.jpg',
     },
     {
       id: '68694a0f-3da1-431f-bd56-142371e29d72',
-      name: 'Aniket Kumar',
+      name: 'Joey Tribbiani',
       school: 'CAL POLY SLO',
       avatarUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr01zI37DYuR8bMV5exWQBSw28C1v_71CAh8d7GP1mplcmTgQA6Q66Oo--QedAN1B4E1k&usqp=CAU',
     },
     {
-      id: '28694a0f-3da1-471f-bd96-142456e29d72',
-      name: 'Kiara',
+      id: '28694a0f-3da1-471f-bd96-142456e29d73',
+      name: 'Pheobe Buffay',
+      school: 'CAL POLY SLO',
+      avatarUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU',
+    },
+    {
+      id: '28694a0f-3da1-471f-bd96-142456e29d74',
+      name: 'Monica Geller',
+      school: 'CAL POLY SLO',
+      avatarUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU',
+    },
+    {
+      id: '28694a0f-3da1-471f-bd96-142456e29d75',
+      name: 'Jennifer Aniston',
+      school: 'CAL POLY SLO',
+      avatarUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU',
+    },
+    {
+      id: '28694a0f-3da1-471f-bd96-142456e29d76',
+      name: 'David Schwimmer',
+      school: 'CAL POLY SLO',
+      avatarUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU',
+    },
+    {
+      id: '28694a0f-3da1-471f-bd96-142456e29d77',
+      name: 'Lisa Kudrow',
+      school: 'CAL POLY SLO',
+      avatarUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU',
+    },
+    {
+      id: '28694a0f-3da1-471f-bd96-142456e29d78',
+      name: 'Matt LeBlanc',
       school: 'CAL POLY SLO',
       avatarUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&usqp=CAU',

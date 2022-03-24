@@ -1,15 +1,17 @@
-import { Flex } from 'native-base';
-import { useState } from 'react';
+import { Flex, Box } from 'native-base';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDeviceOrientation } from '@react-native-community/hooks';
 
 import { FormData } from '../types';
 import { Court } from '../components/Court';
 import { Sidebar } from '../components/Sidebar';
+import Teammates from '../components/Court/Teammates';
 
-export default function CourtView() {
+export default function CourtView({ route, navigation }: any) {
   const { landscape } = useDeviceOrientation();
 
+  const [player, setPlayer] = useState(null);
   const [viewMode, setViewMode] = useState(false);
   const toggleViewMode = () => setViewMode(!viewMode);
   const { handleSubmit, control } = useForm<FormData>({
@@ -22,17 +24,22 @@ export default function CourtView() {
     },
   });
 
+  useEffect(() => {
+    const { playerId } = route.params || 1;
+  }, []);
+
   return (
-    <Flex flexDirection="row" borderWidth={2}>
-      <Flex align="center" flex={2} px={1}>
+    <Flex width="100%" height="100%">
+      <Flex height="87%" flexDirection="row" borderWidth={2}>
         <Court viewMode={viewMode} control={control} />
+        <Sidebar
+          viewMode={viewMode}
+          toggleViewMode={toggleViewMode}
+          handleSubmit={handleSubmit}
+          control={control}
+        />
       </Flex>
-      <Sidebar
-        viewMode={viewMode}
-        toggleViewMode={toggleViewMode}
-        handleSubmit={handleSubmit}
-        control={control}
-      />
+      <Box height="13%" width="100%"><Teammates /></Box>
     </Flex>
   );
 }

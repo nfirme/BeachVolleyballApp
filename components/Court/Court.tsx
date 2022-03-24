@@ -7,22 +7,16 @@ import Touchspace from './Touchspace';
 function Court(props: CourtProps) {
   const { viewMode, control } = props;
 
-  const InteractiveCourt = () => (
-    <Flex height="full" borderWidth={1}>
+  return (
+    <Flex flex={2} height="100%" align="center" >
       <Controller
         control={control}
         render={({ field }) => <Touchspace {...field} />}
         name="hitLocation"
       />
-      <ApproachInput />
-      <Box borderWidth={1} flex={3} />
+      <Box borderWidth={1} width="80%" flex={1} bg="cyan.200" />
+      <Box borderWidth={1} width="70%" flex={1} bg="yellow.200" />
     </Flex>
-  );
-
-  return (
-    <AspectRatio borderWidth={1} height="full" ratio={0.8}>
-      <InteractiveCourt />
-    </AspectRatio>
   );
 }
 

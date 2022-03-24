@@ -1,4 +1,4 @@
-import { Box, Pressable } from 'native-base';
+import { Box, Pressable, AspectRatio } from 'native-base';
 import { GestureResponderEvent } from 'react-native';
 import { forwardRef } from 'react';
 import { TouchspaceProps, Coordinates } from '../../types'
@@ -16,13 +16,13 @@ const Touchspace = forwardRef((props: TouchspaceProps, ref) => {
   };
 
   return (
-    <Box ref={ref} flex={6}>
+    <AspectRatio bg="yellow.200" borderWidth={2} ratio={1} width="70%" ref={ref}>
       <Pressable onPress={handlePress}>
-        <Box height="full">
-          <Point x={100} y={100} />
+        <Box>
+          <Point x={value.x} y={value.y} />
         </Box>
       </Pressable>
-    </Box>
+    </AspectRatio>
   );
 });
 
