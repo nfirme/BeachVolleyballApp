@@ -69,4 +69,28 @@ export const schools = [
     abbrev: 'UCLA',
     avatarUrl: '',
   },
+  {
+    id: 5,
+    name: 'Florida State',
+    abbrev: 'FLO',
+    avatarUrl: '',
+  },
+  {
+    id: 6,
+    name: 'Arizona State',
+    abbrev: 'ASU',
+    avatarUrl: '',
+  },
+  {
+    id: 7,
+    name: 'San Diego State',
+    abbrev: 'SDSU',
+    avatarUrl: '',
+  },
+  {
+    id: 8,
+    name: 'UC Santa Cruz',
+    abbrev: 'UCSC',
+    avatarUrl: '',
+  },
 ];

@@ -1,5 +1,7 @@
 import { Box, Text, FlatList, Spacer, HStack, Avatar } from 'native-base';
 import { useEffect, useState } from 'react';
+
+import { PressableRow } from '../components/Shared';
 import { sampleTeam } from '../data';
 
 export default function PlayerList({ route, navigation }: any) {
@@ -16,12 +18,13 @@ export default function PlayerList({ route, navigation }: any) {
       <FlatList
         data={players}
         renderItem={({ item }) => (
-          <Box
+          <PressableRow
+            onPress={() => navigation.navigate('Court', { playerId: item.id })}
+            bg="coolGray"
             borderBottomWidth="1"
             borderColor="coolGray.200"
-            pl="4"
-            pr="5"
-            py="2"
+            py={2}
+            px={4}
           >
             <HStack
               space={3}
@@ -42,7 +45,7 @@ export default function PlayerList({ route, navigation }: any) {
                 {item.school}
               </Text>
             </HStack>
-          </Box>
+          </PressableRow>
         )}
       />
     </Box>

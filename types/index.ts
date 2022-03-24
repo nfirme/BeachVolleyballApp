@@ -3,7 +3,7 @@ import { Control, UseFormHandleSubmit } from "react-hook-form";
 export type NavigatorParamList = {
   Home: undefined;
   Players: { schoolId: string } | undefined;
-  Court: undefined;
+  Court: { playerId: string } | undefined;
   Schools: undefined;
   Test: undefined;
 };
