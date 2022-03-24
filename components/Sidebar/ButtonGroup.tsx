@@ -9,6 +9,8 @@ const ButtonGroup = forwardRef((props: ButtonGroupProps, ref) => {
       <Button.Group isAttached colorScheme={colorScheme}>
         {elements.map((element, index) => (
           <Button
+            py={4}
+            px={4}
             variant={value === element ? 'solid' : 'outline'}
             key={index}
             onPress={() => onChange(element)}

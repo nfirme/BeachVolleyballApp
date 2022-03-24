@@ -8,7 +8,7 @@ export default function SidebarButtons({ control, onSubmit }: SidebarButtonsProp
   const defenseElements = ['Block', 'Pull'];
 
   return (
-    <VStack alignItems="center" justifyContent="space-evenly">
+    <VStack flex={1} alignItems="center" justifyContent="space-evenly">
       <Controller
         control={control}
         render={({ field }) => (

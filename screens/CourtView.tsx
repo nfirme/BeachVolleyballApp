@@ -28,9 +28,13 @@ export default function CourtView({ route, navigation }: any) {
     const { playerId } = route.params || 1;
   }, []);
 
+  const styleProps = {
+    height: landscape ? '87%' : '70%'
+  }
+
   return (
-    <Flex width="100%" height="100%">
-      <Flex height="87%" flexDirection="row" borderWidth={2}>
+    <Flex width="100%" height="100%" justifyContent="space-between">
+      <Flex height={styleProps.height} flexDirection="row">
         <Court viewMode={viewMode} control={control} />
         <Sidebar
           viewMode={viewMode}
