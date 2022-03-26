@@ -6,8 +6,8 @@ export default function Teammates() {
     <ScrollView px={4} py={4} horizontal>
       <Button>Nick Firme</Button>
       <Divider mx={4} orientation="vertical" thickness={3}/>
-      {sampleTeam.players.map(p => (
-        <Button variant="solid" mr={4}>{p.name}</Button>
+      {sampleTeam.players.map((p, i) => (
+        <Button variant="solid" mr={4} key={i}>{p.name}</Button>
       ))}
     </ScrollView>
   )

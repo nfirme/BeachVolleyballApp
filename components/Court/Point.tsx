@@ -10,9 +10,10 @@ export default function Point({ x, y }: PointProps) {
     <Circle
       left={x}
       top={y}
-      size={5}
+      size={8}
       bg="red.500"
-      opacity={0.5}
+      opacity={0.7}
+      borderWidth={1}
       style={{ position: 'absolute' }}
     />
   );

@@ -32,6 +32,7 @@ export type TouchspaceProps = {
   viewMode?: boolean;
   value: Coordinates;
   onChange: (value: any) => void;
+  onLayout?: () => {};
 };
 
 export type ButtonGroupProps = {
@@ -56,4 +57,5 @@ export type SidebarProps = {
   toggleViewMode: () => void;
   control: Control<FormData>;
   handleSubmit: UseFormHandleSubmit<FormData>;
-}
+  reset: any;
+};

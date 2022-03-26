@@ -4,7 +4,7 @@ import SidebarButtons from './SidebarButtons';
 import { SidebarProps } from '../../types';
 
 export default function Sidebar(props: SidebarProps) {
-  const { viewMode, toggleViewMode, control, handleSubmit } = props;
+  const { viewMode, toggleViewMode, control, handleSubmit, reset } = props;
   return (
     <Flex py={8} px={8} flex={1}>
       <Player name="Nick Firme" school="Cal Poly SLO" number={5} avatar="" />
@@ -16,10 +16,13 @@ export default function Sidebar(props: SidebarProps) {
       >
         {viewMode ? 'Interactive Mode' : 'View Heatmap'}
       </Button>
-      {viewMode ? (
+      {!viewMode ? (
         <SidebarButtons
           control={control}
-          onSubmit={handleSubmit((data) => console.log(data))}
+          onSubmit={handleSubmit((data) => {
+            console.log(data)
+            reset("hitLocation")
+          })}
         />
       ) : (
         <Box height={64} px={8} borderWidth={1} />

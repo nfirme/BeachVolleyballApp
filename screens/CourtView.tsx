@@ -14,7 +14,7 @@ export default function CourtView({ route, navigation }: any) {
   const [player, setPlayer] = useState(null);
   const [viewMode, setViewMode] = useState(false);
   const toggleViewMode = () => setViewMode(!viewMode);
-  const { handleSubmit, control } = useForm<FormData>({
+  const { handleSubmit, control, resetField } = useForm<FormData>({
     defaultValues: {
       offenseType: 'Hit',
       defenseType: 'Block',
@@ -40,6 +40,7 @@ export default function CourtView({ route, navigation }: any) {
           viewMode={viewMode}
           toggleViewMode={toggleViewMode}
           handleSubmit={handleSubmit}
+          reset={resetField}
           control={control}
         />
       </Flex>
