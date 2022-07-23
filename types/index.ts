@@ -1,12 +1,4 @@
-import { Control, UseFormHandleSubmit } from "react-hook-form";
-
-export type NavigatorParamList = {
-  Home: undefined;
-  Players: { schoolId: string } | undefined;
-  Court: { playerId: string } | undefined;
-  Schools: undefined;
-  Test: undefined;
-};
+import { Control } from "react-hook-form";
 
 export type Coordinates = {
   x: number;
@@ -28,13 +20,6 @@ export type PlayerProps = {
   avatar: string;
 };
 
-export type TouchspaceProps = {
-  viewMode?: boolean;
-  value: Coordinates;
-  onChange: (value: any) => void;
-  onLayout?: () => {};
-};
-
 export type ButtonGroupProps = {
   value: string;
   onChange: (value: any) => void;
@@ -52,10 +37,3 @@ export type CourtProps = {
   control: Control<FormData>;
 }
 
-export type SidebarProps = {
-  viewMode: boolean;
-  toggleViewMode: () => void;
-  control: Control<FormData>;
-  handleSubmit: UseFormHandleSubmit<FormData>;
-  reset: any;
-};

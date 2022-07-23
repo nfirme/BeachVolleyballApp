@@ -1,32 +1,36 @@
-import { Box, Button, Text, Flex } from 'native-base';
+import { Button, Flex } from 'native-base';
 import Player from './Player';
 import SidebarButtons from './SidebarButtons';
-import { SidebarProps } from '../../types';
+import { Control, UseFormHandleSubmit } from 'react-hook-form';
+import { FormData } from '../../types';
+import { CourtViewProps } from '../../types/navigation';
+
+type SidebarProps = {
+  control: Control<FormData>;
+  handleSubmit: UseFormHandleSubmit<FormData>;
+  reset: any;
+  navigation: CourtViewProps['navigation'];
+};
 
 export default function Sidebar(props: SidebarProps) {
-  const { viewMode, toggleViewMode, control, handleSubmit, reset } = props;
+  const { control, handleSubmit, reset, navigation } = props;
   return (
     <Flex py={8} px={8} flex={1}>
       <Player name="Nick Firme" school="Cal Poly SLO" number={5} avatar="" />
       <Button
-        colorScheme={viewMode ? 'amber' : 'primary'}
-        onPress={toggleViewMode}
+        onPress={() => navigation.navigate('Data', { playerId: '1' })}
         my={8}
         py={4}
       >
-        {viewMode ? 'Interactive Mode' : 'View Heatmap'}
+        View Heatmaps
       </Button>
-      {!viewMode ? (
-        <SidebarButtons
-          control={control}
-          onSubmit={handleSubmit((data) => {
-            console.log(data)
-            reset("hitLocation")
-          })}
-        />
-      ) : (
-        <Box height={64} px={8} borderWidth={1} />
-      )}
+      <SidebarButtons
+        control={control}
+        onSubmit={handleSubmit((data) => {
+          console.log(data);
+          reset('hitLocation');
+        })}
+      />
     </Flex>
   );
 }

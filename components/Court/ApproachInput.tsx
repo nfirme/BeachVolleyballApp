@@ -1,23 +1,30 @@
-import { HStack } from 'native-base'
+import { forwardRef } from 'react';
+import { HStack } from 'native-base';
 import PressableCell from './PressableCell';
 
-export default function ApproachInput(props: any) {
-  const { net, value, elements, onChange, bg, viewMode,  ...rest } = props;
+type ApproachInputProps = {
+  value?: string;
+  elements: string[];
+  onChange?: (element: string) => void;
+  bg: string;
+};
+
+const ApproachInput = forwardRef((props: ApproachInputProps, ref) => {
+  const { value, elements, onChange, bg, ...rest } = props;
 
   return (
     <HStack {...rest}>
       {elements.map((element: string, index: number) => (
         <PressableCell
-          flex={1}
-          borderWidth={1}
-          bg={!viewMode && value === element ? `${bg}.300` : `${bg}.200`}
-          disabled={viewMode}
+          disabled={!(value && onChange)}
+          bg={value === element ? `${bg}.300` : `${bg}.200`}
           key={index}
           element={element}
-          onPress={() => onChange(element)}
-        >
-        </PressableCell>
+          onPress={onChange ? () => onChange(element) : undefined}
+        />
       ))}
     </HStack>
   );
-}
+});
+
+export default ApproachInput;
